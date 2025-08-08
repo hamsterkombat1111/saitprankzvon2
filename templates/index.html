@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="{{ current_lang if current_lang else 'en' }}">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{{ url_for('static', filename='fonts/minecraft.ttf') }}" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+    
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url("{{ url_for('static', filename='fonts/minecraft.ttf') }}") format('truetype');
+            font-display: swap;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url("{{ url_for('static', filename='images/space-bg.jpg') }}") no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: -1;
+        }
+    </style>
+
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+
+    <title>PrankVzlom - {{ data.translations.info_title }}</title>
+</head>
+<body>
+    <!-- Modal Disclaimer -->
+    <div id="disclaimerModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+        <div class="modal-content animate__animated animate__fadeInDown">
+            <div class="modal-header">
+                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                <h3 id="modalTitle">{{ data.translations.modal_title }}</h3>
+            </div>
+            <div class="modal-body">
+                <p id="modalDesc">{{ data.translations.modal_content }}</p>
+            </div>
+            <div class="modal-footer">
+                <button id="acceptBtn" class="btn-accept" aria-label="{{ data.translations.accept }}">
+                    <i class="fas fa-check-circle" aria-hidden="true"></i> {{ data.translations.accept }}
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="animate__animated animate__fadeInDown" role="banner">
+            <div class="logo" aria-label="PrankVzlom logo">
+                <i class="fas fa-video" aria-hidden="true"></i>
+                <h1>PrankVzlom</h1>
+            </div>
+            <div class="header-controls">
+                <nav class="language-switcher" aria-label="Language switcher">
+                    <button
+                        class="lang-btn {% if current_lang == 'ru' %}active{% endif %}"
+                        data-lang="ru"
+                        aria-pressed="{% if current_lang == 'ru' %}true{% else %}false{% endif %}"
+                    >
+                        🇷🇺 RU
+                    </button>
+                    <button
+                        class="lang-btn {% if current_lang == 'en' %}active{% endif %}"
+                        data-lang="en"
+                        aria-pressed="{% if current_lang == 'en' %}true{% else %}false{% endif %}"
+                    >
+                        🇺🇸 EN
+                    </button>
+                </nav>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Tab Navigation -->
+        <nav class="tabs animate__animated animate__fadeIn animate__delay-1s" role="tablist" aria-label="Main tabs">
+            <button class="tab-btn active" data-tab="info" role="tab" aria-selected="true" aria-controls="info">
+                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                <span>{{ data.translations.info_title.split(' ')[0] }}</span>
+            </button>
+            <button class="tab-btn" data-tab="software" role="tab" aria-selected="false" aria-controls="software">
+                <i class="fas fa-download" aria-hidden="true"></i>
+                <span>{{ data.translations.software }}</span>
+            </button>
+            <button class="tab-btn" data-tab="admins" role="tab" aria-selected="false" aria-controls="admins">
+                <i class="fas fa-user-shield" aria-hidden="true"></i>
+                <span>{{ data.translations.admins }}</span>
+            </button>
+            <button class="tab-btn" data-tab="partners" role="tab" aria-selected="false" aria-controls="partners">
+                <i class="fas fa-handshake" aria-hidden="true"></i>
+                <span>{{ data.translations.partners }}</span>
+            </button>
+        </nav>
+
+        <!-- Main content sections -->
+        <main>
+            <!-- Information Section -->
+            <section
+                id="info"
+                class="tab-content active animate__animated animate__fadeIn"
+                role="tabpanel"
+                aria-labelledby="tab-info"
+            >
+                <div class="card">
+                    <div class="section-header">
+                        <i class="fas fa-info-circle" aria-hidden="true"></i>
+                        <h2>{{ data.info.title }}</h2>
+                    </div>
+                    <div class="disclaimer">
+                        <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                        <p>{{ data.info.description }}</p>
+                    </div>
+                    <div class="links-grid">
+                        {% for link in data.info.links %}
+                        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="link-item">
+                            {% if "КАНАЛ" in link.name or "CHANNEL" in link.name %}
+                            <i class="fas fa-broadcast-tower" aria-hidden="true"></i>
+                            {% elif "ЧАТ" in link.name or "CHAT" in link.name %}
+                            <i class="fas fa-comments" aria-hidden="true"></i>
+                            {% elif "БОТ" in link.name or "BOT" in link.name %}
+                            <i class="fas fa-robot" aria-hidden="true"></i>
+                            {% elif "ТИК ТОК" in link.name or "TIKTOK" in link.name %}
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                            {% else %}
+                            <i class="fas fa-link" aria-hidden="true"></i>
+                            {% endif %}
+                            {{ link.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <!-- Software Section -->
+            <section id="software" class="tab-content" role="tabpanel" aria-labelledby="tab-software" hidden>
+                <div class="card">
+                    <div class="section-header">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                        <h2>{{ data.translations.software }}</h2>
+                    </div>
+                    <div class="software-grid">
+                        {% for software in data.software %}
+                        <a href="{{ software.url }}" target="_blank" rel="noopener noreferrer" class="software-item">
+                            <i class="fas fa-file-download" aria-hidden="true"></i> {{ software.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <!-- Admins Section -->
+            <section id="admins" class="tab-content" role="tabpanel" aria-labelledby="tab-admins" hidden>
+                <div class="card">
+                    <div class="section-header">
+                        <i class="fas fa-user-shield" aria-hidden="true"></i>
+                        <h2>{{ data.translations.admins }}</h2>
+                    </div>
+                    {% for role, admins in data.admins.items() %}
+                    <div class="admin-role">
+                        <h3><i class="fas fa-crown" aria-hidden="true"></i> {{ role }}</h3>
+                        <div class="admin-grid">
+                            {% for admin in admins %}
+                            <a href="{{ admin.url }}" target="_blank" rel="noopener noreferrer" class="admin-item">
+                                <div class="admin-avatar-container">
+                                    {% if admin.avatar %}
+                                    <img
+                                        src="{{ admin.avatar }}"
+                                        alt="{{ admin.name }}"
+                                        class="admin-avatar"
+                                    />
+                                    {% else %}
+                                    <div class="admin-avatar-placeholder" aria-label="No avatar">
+                                        <i class="fas fa-user-secret" aria-hidden="true"></i>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <span class="admin-name">{{ admin.name }}</span>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Partners Section -->
+            <section id="partners" class="tab-content" role="tabpanel" aria-labelledby="tab-partners" hidden>
+                <div class="card">
+                    <div class="section-header">
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
+                        <h2>{{ data.translations.partners }}</h2>
+                    </div>
+                    <div class="partners-grid">
+                        {% for partner in data.partners %}
+                        <a href="{{ partner.url }}" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-avatar-container">
+                                {% if partner.avatar %}
+                                <img
+                                    src="{{ partner.avatar }}"
+                                    alt="{{ partner.name }}"
+                                    class="partner-avatar"
+                                />
+                                {% else %}
+                                <div class="partner-avatar-placeholder" aria-label="No avatar">
+                                    <i class="fas fa-feather" aria-hidden="true"></i>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <span class="partner-name">{{ partner.name }}</span>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="animate__animated animate__fadeInUp animate__delay-2s" role="contentinfo">
+            <p>{{ data.translations.copyright }}</p>
+            <div class="social-links" aria-label="Social media links">
+                <a href="#" rel="noopener noreferrer"><i class="fab fa-telegram" aria-hidden="true"></i></a>
+                <a href="#" rel="noopener noreferrer"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                <a href="#" rel="noopener noreferrer"><i class="fab fa-discord" aria-hidden="true"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.botConfig = {
+            token: {{ bot_token|tojson }},
+            chatId: {{ chat_id|tojson }},
+        };
+    </script>
+</body>
+</html>
