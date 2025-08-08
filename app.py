@@ -121,7 +121,7 @@ limiter = Limiter(
     strategy="fixed-window"
 )
 
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8430330790:AAG1YWeiP2f1GaLP4J6XEQ0FDjk0wlvRWWA")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8401110693:AAGoNYbjGKcf5i_iBVeifBJcVOIdvzaZwWc")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "6330358945")
 
 last_telegram_send = 0
