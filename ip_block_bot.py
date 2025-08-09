@@ -4,8 +4,8 @@ import os
 import time
 import json
 
-BOT_TOKEN = "8401110693:AAGoNYbjGKcf5i_iBVeifBJcVOIdvzaZwWc"
-ADMIN_ID = 6330358945
+BOT_TOKEN = "8305865403:AAH8l2d07tPUZ69hYKRJ2Obu4Q9CoZlFWAk"
+ADMIN_ID = 7328238543
 BLOCK_DURATION_HOURS = 6
 BLOCKED_IPS_FILE = "blocked_ips.json"
 STATS_FILE = "block_stats.json"
