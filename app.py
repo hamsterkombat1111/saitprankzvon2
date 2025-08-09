@@ -453,6 +453,11 @@ def index():
                     "name": "Kurapika",
                     "url": "https://t.me/kaiifaryk",
                     "avatar": "https://i.ibb.co/RkMpChw1/photo-2025-07-26-02-48-30.jpg"
+                },
+                {
+                    "name": "Аркадикс😞",
+                    "url": "https://t.me/Arkadaroot",
+                    "avatar": None
                 }
             ],
             t['senior_mods']: [
