@@ -122,7 +122,7 @@ limiter = Limiter(
 )
 
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "7534057026:AAGKvGBFor7wMxD0bixNqGdduyqjyOSCiW4")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "6330358945")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "-1002885692519")
 
 last_telegram_send = 0
 last_log_message = None  # Изменили _last_log_message на last_log_message
