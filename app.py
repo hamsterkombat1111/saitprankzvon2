@@ -492,9 +492,9 @@ def index():
             ],
             t['andrey']: [
                 {
-                    "name": "Paul Du Rove", 
-                    "url": "tg://openmessage?user_id=7401067755",
-                    "avatar": "https://ltdfoto.ru/images/2025/07/25/photo_2025-05-03_16-27-45.jpg"
+                    "name": "Андрей Назаров", 
+                    "url": "https://t.me/andreynazarovvvvv",
+                    "avatar": "https://ltdfoto.ru/images/2025/08/10/photo_2025-08-10_23-50-16.jpg"
                 },
             ]
         },
