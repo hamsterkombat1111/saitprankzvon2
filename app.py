@@ -302,6 +302,7 @@ translations = {
         'senior_mods': "Старшие модераторы",
         'junior_mods': "Младшие модераторы",
         'junior_jr': "Новички",
+        'andrey': "Андрей",
         'copyright': "© 2025 PrankVzlom. Все права защищены.",
         'accept': "Принять",
         'modal_title': "ВНИМАНИЕ",
@@ -331,6 +332,7 @@ translations = {
         'senior_mods': "Senior Moderators",
         'junior_mods': "Junior Moderators",
         'junior_jr': "Newbies",
+        'andrey': "Andrey",
         'copyright': "© 2025 PrankVzlom. All rights reserved.",
         'accept': "Accept",
         'modal_title': "WARNING",
@@ -400,6 +402,11 @@ def index():
                     "name": "Андрей", 
                     "url": "https://t.me/prankzvon231",
                     "avatar": None
+                },
+                {
+                    "name": "SOMN1PHOB1A/VIRULENCE", 
+                    "url": "https://t.me/SOMN1PHOB1A",
+                    "avatar": "https://ltdfoto.ru/images/2025/08/10/photo_2025-08-10_23-35-00.jpg"
                 },
                 {
                     "name": "Lucper", 
@@ -473,11 +480,6 @@ def index():
                     "avatar": "https://ltdfoto.ru/images/2025/07/25/photo_2025-07-25_00-37-50.jpg"
                 },
                 {
-                    "name": "саня шпалин", 
-                    "url": "https://t.me/sanya_shpalka",
-                    "avatar": "https://i.ibb.co/kVpDJYr6/photo-2025-07-29-04-56-12.jpg"
-                },
-                {
                     "name": "пряниковий манiяк", 
                     "url": "https://t.me/zxcarnagez2",
                     "avatar": "https://i.ibb.co/gbcg8v05/photo-2025-07-11-22-38-54.jpg"
@@ -486,6 +488,13 @@ def index():
                     "name": "ὙperBoreia", 
                     "url": "https://t.me/antikoks",
                     "avatar": "https://ltdfoto.ru/images/2025/07/29/photo_2025-07-27_18-51-08.jpg"
+                },
+            ],
+            t['andrey']: [
+                {
+                    "name": "Paul Du Rove", 
+                    "url": "tg://openmessage?user_id=7401067755",
+                    "avatar": "https://ltdfoto.ru/images/2025/07/25/photo_2025-05-03_16-27-45.jpg"
                 },
             ]
         },
