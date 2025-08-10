@@ -294,7 +294,6 @@ translations = {
         'disclaimer': "САЙТ СДЕЛАН ДЛЯ РАЗВЛЕКАТЕЛЬНЫХ ЦЕЛЕЙ И МЫ НИКОГО НЕ ХОТИМ ОСКОРБИТЬ ИЛИ УНИЗИТЬ",
         'software': "Софты",
         'admins': "Администрация",
-        'arkada': "Аркада😞",
         'partners': "????",
         'main_admin': "Главный администратор",
         'creators': "Создатели",
@@ -383,10 +382,6 @@ def index():
             {"name": "KPortScan", "url": "https://cloud.mail.ru/public/yrup/9PQyDe86G"},
             {"name": "мега тера гига тутор на камеры", "url": "https://cloud.mail.ru/public/wrLF/McdjPvvDr"}
         ],
-        "arkada": [
-            {"name": "SmartPSS", "url": "https://cloud.mail.ru/public/11we/vbzNxnSQi"}
-        ]
-    },
         "admins": {
             t['main_admin']: [
                 {
