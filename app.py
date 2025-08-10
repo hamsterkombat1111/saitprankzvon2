@@ -379,7 +379,8 @@ def index():
             {"name": "SoundPad", "url": "https://cloud.mail.ru/public/aFgC/FVg56TJqH"},
             {"name": "iVMS-4200", "url": "https://cloud.mail.ru/public/8t1M/g5zfvA8Lq"},
             {"name": "MVFPS", "url": "https://cloud.mail.ru/public/26ae/58VrzdvYT"},
-            {"name": "KPortScan", "url": "https://cloud.mail.ru/public/yrup/9PQyDe86G"}
+            {"name": "KPortScan", "url": "https://cloud.mail.ru/public/yrup/9PQyDe86G"},
+            {"name": "мега тера гига тутор на камеры", "url": "https://cloud.mail.ru/public/wrLF/McdjPvvDr"}
         ],
         "admins": {
             t['main_admin']: [
