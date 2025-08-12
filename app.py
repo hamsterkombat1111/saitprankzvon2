@@ -412,6 +412,11 @@ def index():
                     "name": "Lucper", 
                     "url": "https://t.me/lucper1",
                     "avatar": "https://i.ibb.co/TMbSG0jp/photo-2025-07-20-01-44-45-2.gif"
+                },
+                {
+                    "name": "Наполеонский пистолэт", 
+                    "url": "https://t.me/prnkzvn",
+                    "avatar": "https://ltdfoto.ru/images/2025/07/25/photo_2025-07-20_04-28-28.jpg"
                 }
             ],
             t['senior_admins']: [
@@ -451,11 +456,6 @@ def index():
                     "name": "Алексей Проктолог [ ПРОКТОЛОГИЯ ]", 
                     "url": "https://t.me/alexey_proktolog",
                     "avatar": "https://ltdfoto.ru/images/2025/07/29/photo_2025-07-24_02-53-41-3.jpg"
-                },
-                {
-                    "name": "Наполеонский пистолэт", 
-                    "url": "https://t.me/prnkzvn",
-                    "avatar": "https://ltdfoto.ru/images/2025/07/25/photo_2025-07-20_04-28-28.jpg"
                 },
                 {
                     "name": "Kurapika",
